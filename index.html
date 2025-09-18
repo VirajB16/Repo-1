@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Personal Task Manager</h1>
+        </header>
+
+        <main>
+            <!-- Add Task Form -->
+            <section class="add-task-section">
+                <div class="form-container">
+                    <input type="text" id="taskTitle" placeholder="Task title..." maxlength="100">
+                    <textarea id="taskDescription" placeholder="Task description..." rows="3"></textarea>
+                    <button id="addTaskBtn">Add Task</button>
+                </div>
+            </section>
+
+            <!-- Filter Controls -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Tasks</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="task-counter">
+                    <span id="taskCount">0 tasks</span>
+                </div>
+            </section>
+
+            <!-- Tasks Display -->
+            <section class="tasks-section">
+                <div id="tasksList" class="tasks-container">
+                    <!-- Tasks will be loaded here -->
+                </div>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <h3>No tasks yet!</h3>
+                    <p>Add your first task above to get started.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="editTitle" placeholder="Task title...">
+            <textarea id="editDescription" placeholder="Task description..." rows="3"></textarea>
+            <div class="modal-buttons">
+                <button id="saveEditBtn">Save Changes</button>
+                <button id="cancelEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
